@@ -8,6 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
@@ -21,14 +22,29 @@ fun RowLayoutScreen(navController: NavHostController) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            IconButton(onClick = { navController.popBackStack() }) {
+        // Tiêu đề căn giữa với nút quay lại
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp)
+        ) {
+            IconButton(
+                onClick = { navController.popBackStack() },
+                modifier = Modifier.align(Alignment.CenterStart)
+            ) {
                 Icon(Icons.Default.ArrowBack, contentDescription = "Back")
             }
-            Spacer(Modifier.width(8.dp))
-            Text("Row Layout", color = Color(0xFF5B9EFF), fontWeight = androidx.compose.ui.text.font.FontWeight.Bold, fontSize = 22.sp)
+
+            Text(
+                text = "Row Layout",
+                color = Color(0xFF5B9EFF),
+                fontWeight = FontWeight.Bold,
+                fontSize = 22.sp,
+                modifier = Modifier.align(Alignment.Center)
+            )
         }
-        Spacer(Modifier.height(16.dp))
+
+        // Các hàng layout
         repeat(4) {
             Row(
                 modifier = Modifier
@@ -41,7 +57,10 @@ fun RowLayoutScreen(navController: NavHostController) {
                     Box(
                         modifier = Modifier
                             .size(60.dp, 40.dp)
-                            .background(if (idx == 1) Color(0xFF5B9EFF) else Color(0xFFD6E6FF), RoundedCornerShape(8.dp))
+                            .background(
+                                if (idx == 1) Color(0xFF5B9EFF) else Color(0xFFD6E6FF),
+                                RoundedCornerShape(8.dp)
+                            )
                     )
                 }
             }

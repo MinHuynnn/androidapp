@@ -1,5 +1,6 @@
 package screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
@@ -23,31 +24,97 @@ fun TextDetailScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
+            .padding(24.dp)
     ) {
-        Row(verticalAlignment = Alignment.CenterVertically) {
+        // Top bar with back button and title
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
             IconButton(onClick = { navController.popBackStack() }) {
-                Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                Icon(
+                    imageVector = Icons.Default.ArrowBack,
+                    contentDescription = "Back",
+                    tint = Color.Black // ← Màu đen như bạn yêu cầu
+                )
             }
-            Spacer(Modifier.width(8.dp))
-            Text("Text Detail", fontWeight = FontWeight.Bold, fontSize = 22.sp)
+            Spacer(modifier = Modifier.width(8.dp))
+            Text(
+                text = "Text Detail",
+                fontSize = 20.sp,
+                color = Color(0xFF007AFF),
+                modifier = Modifier.weight(1f),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+            Spacer(modifier = Modifier.width(48.dp)) // để cân đối layout bên phải
         }
-        Spacer(Modifier.height(32.dp))
-        Text(
-            buildAnnotatedString {
-                append("The ")
-                withStyle(SpanStyle(textDecoration = TextDecoration.LineThrough)) { append("quick") }
-                append(" ")
-                withStyle(SpanStyle(color = Color(0xFFB8860B), fontWeight = FontWeight.Bold, fontSize = 28.sp)) { append("Brown") }
-                append("\nfox j u m p s ")
-                withStyle(SpanStyle(fontWeight = FontWeight.Bold, fontStyle = FontStyle.Italic)) { append("over") }
-                append("\nthe ")
-                withStyle(SpanStyle(fontStyle = FontStyle.Italic, textDecoration = TextDecoration.Underline)) { append("lazy") }
-                append(" dog.")
-            },
-            fontSize = 24.sp
-        )
-        Divider(modifier = Modifier.padding(top = 16.dp))
+
+        // Spacer to push text into center of screen
+        Spacer(modifier = Modifier.height(80.dp))
+
+        // Main text block centered horizontally
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                buildAnnotatedString {
+                    withStyle(SpanStyle(fontSize = 40.sp)) {
+                        append("The ")
+                        withStyle(SpanStyle(textDecoration = TextDecoration.LineThrough)) {
+                            append("quick ")
+                        }
+                        withStyle(
+                            SpanStyle(
+                                color = Color(0xFFB86B00),
+                                fontWeight = FontWeight.Bold
+                            )
+                        ) {
+                            append("Brown")
+                        }
+                    }
+
+                    append("\n")
+
+                    withStyle(SpanStyle(fontSize = 40.sp)) {
+                        append("fox j u m p s ")
+                        withStyle(
+                            SpanStyle(
+                                fontWeight = FontWeight.Bold,
+                                fontStyle = FontStyle.Italic
+                            )
+                        ) {
+                            append("over")
+                        }
+                    }
+
+                    append("\n")
+
+                    withStyle(SpanStyle(fontSize = 40.sp)) {
+                        append("the ")
+                        withStyle(
+                            SpanStyle(
+                                fontStyle = FontStyle.Italic,
+                                textDecoration = TextDecoration.Underline
+                            )
+                        ) {
+                            append("lazy")
+                        }
+                        append(" dog.")
+                    }
+                },
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+        }
+
+        Divider(modifier = Modifier.padding(vertical = 16.dp))
     }
 }
+
+
+
+
+
+
+
