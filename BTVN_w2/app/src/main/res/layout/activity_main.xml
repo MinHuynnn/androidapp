@@ -86,16 +86,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/material_dynamic_tertiary90"
-        android:paddingHorizontal="24dp"
+        android:paddingHorizontal="44dp"
         android:paddingVertical="8dp"
         android:text="Kiểm tra"
         android:textColor="@color/design_default_color_error" />
 
     <TextView
         android:id="@+id/txtResult"
-        android:layout_width="wrap_content"
+        android:layout_width="230dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text=""
-        android:textSize="18sp"
-        android:layout_marginTop="20dp"/>
+        android:textSize="18sp" />
 </LinearLayout>

@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
                     resultText.text = "Email không đúng định dạng"
                 }
                 else -> {
-                    resultText.setTextColor(Color.parseColor("#008000")) // Màu xanh
+                    resultText.setTextColor(Color.parseColor("#008000")) // Màu xanh cỏ
                     resultText.text = "Bạn đã nhập email hợp lệ"
                 }
             }

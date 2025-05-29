@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                 else -> "Người già"
             }
 
-            txtResult.text = "$name thuộc nhóm: $result"
+            txtResult.text = "$name là: $result"
         }
     }
 }
