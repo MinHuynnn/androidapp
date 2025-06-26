@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "64094840604",
+    "project_id": "btvnweek5-eb7bb",
+    "storage_bucket": "btvnweek5-eb7bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:64094840604:android:69fd506c84ad258d2b3cd9",
+        "android_client_info": {
+          "package_name": "com.app.btvn_week5"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbPjopDSOJZGZPywBxkf3cWR8b5RXImS0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
